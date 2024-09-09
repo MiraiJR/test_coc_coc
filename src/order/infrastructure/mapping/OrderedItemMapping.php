@@ -8,20 +8,20 @@ use app\order\domain\OrderedItem;
 
 class OrderedItemMapping
 {
-    private string $RAW_DATA_AMAZON_PRICE = "amazon_price";
-    private string $RAW_DATA_WEIGHT = "weight";
-    private string $RAW_DATA_HEIGHT = "height";
-    private string $RAW_DATA_WIDTH = "width";
-    private string $RAW_DATA_DEPTH = "depth";
+    const RAW_DATA_AMAZON_PRICE = "amazon_price";
+    const RAW_DATA_WEIGHT = "weight";
+    const RAW_DATA_HEIGHT = "height";
+    const RAW_DATA_WIDTH = "width";
+    const RAW_DATA_DEPTH = "depth";
 
     public function convertRawDataToDomainEntity(array $raw_data): OrderedItem
     {
         return new OrderedItem(
-            $raw_data[$this->RAW_DATA_AMAZON_PRICE],
-            $raw_data[$this->RAW_DATA_WEIGHT],
-            $raw_data[$this->RAW_DATA_WIDTH],
-            $raw_data[$this->RAW_DATA_HEIGHT],
-            $raw_data[$this->RAW_DATA_DEPTH],
+            $raw_data[self::RAW_DATA_AMAZON_PRICE],
+            $raw_data[self::RAW_DATA_WEIGHT],
+            $raw_data[self::RAW_DATA_WIDTH],
+            $raw_data[self::RAW_DATA_HEIGHT],
+            $raw_data[self::RAW_DATA_DEPTH],
         );
     }
 }

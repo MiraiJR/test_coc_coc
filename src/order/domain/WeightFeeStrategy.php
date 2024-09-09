@@ -6,9 +6,8 @@ namespace app\order\domain;
 
 class WeightFeeStrategy implements FeeStrategy
 {
-
     public function calculateFee(OrderedItem $item, CoefficientConfiguration $coefficient_configuration): float
     {
-        return $item->getWeight() * $coefficient_configuration->getWeight();
+        return round($item->getWeight() * $coefficient_configuration->getWeight(), 2);
     }
 }

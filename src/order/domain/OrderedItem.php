@@ -23,7 +23,7 @@ class OrderedItem
 
     public function getArea(): float
     {
-        return $this->width * $this->height * $this->depth;
+        return round($this->width * $this->height * $this->depth, 2);
     }
 
     public function getPrice(): float
