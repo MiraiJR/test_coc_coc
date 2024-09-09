@@ -22,6 +22,12 @@ class OrderRepository implements LoadOrder
      */
     public function loadOrderById(int $order_id): Order
     {
+        $file_path = __DIR__ . '/../data_storage/order/order_' . $order_id . '.json';
+
+        if (!file_exists($file_path)) {
+            throw new \Exception("Order not found");
+        }
+
         $raw_data = file_get_contents(__DIR__ . '/../data_storage/order/order_' . $order_id . '.json');
 
         if (!$raw_data) {

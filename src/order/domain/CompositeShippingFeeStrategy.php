@@ -16,7 +16,7 @@ class CompositeShippingFeeStrategy implements FeeStrategy
 
     public function calculateFee(OrderedItem $item, CoefficientConfiguration $coefficient_configuration): float
     {
-        $fees = array_map(function(FeeStrategy $strategy) use ($item, $coefficient_configuration) {
+        $fees = array_map(function (FeeStrategy $strategy) use ($item, $coefficient_configuration) {
             return $strategy->calculateFee($item, $coefficient_configuration);
         }, $this->feeStrategies);
 

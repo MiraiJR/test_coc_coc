@@ -6,12 +6,17 @@ namespace app\order\infrastructure\mapping;
 
 use app\order\domain\Order;
 
-class OrderMapping {
+class OrderMapping
+{
     private readonly OrderedItemMapping $orderedItemMapping;
-    public function __construct(OrderedItemMapping $ordered_item_mapping = null) {
+
+    public function __construct(OrderedItemMapping $ordered_item_mapping = null)
+    {
         $this->orderedItemMapping = $ordered_item_mapping ?? new OrderedItemMapping();
     }
-    public function convertRawDataToDomainEntity(array $raw_data): Order {
+
+    public function convertRawDataToDomainEntity(array $raw_data): Order
+    {
         $ordered_items = [];
 
         foreach ($raw_data as $raw_ordered_item) {

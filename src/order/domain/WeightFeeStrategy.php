@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace app\order\domain;
 
-class WeightFeeStrategy implements FeeStrategy {
+class WeightFeeStrategy implements FeeStrategy
+{
 
     public function calculateFee(OrderedItem $item, CoefficientConfiguration $coefficient_configuration): float
     {

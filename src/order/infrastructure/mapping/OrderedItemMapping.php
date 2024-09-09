@@ -14,10 +14,6 @@ class OrderedItemMapping
     private string $RAW_DATA_WIDTH = "width";
     private string $RAW_DATA_DEPTH = "depth";
 
-    public function __construct()
-    {
-    }
-
     public function convertRawDataToDomainEntity(array $raw_data): OrderedItem
     {
         return new OrderedItem(
