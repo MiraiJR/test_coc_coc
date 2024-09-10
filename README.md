@@ -1,16 +1,23 @@
 ## How to run
+
 ```
+composer install
 php -S localhost:8000
 ```
 
 ## How to call API
+
 ### Postman
+
 Endpoint:
+
 ```
 http://localhost:8000/public/api/order/calculate_gross_price.php
 ```
+
 Method: POST <br>
 Body: Raw -> JSON
+
 ```
 {
     "order_id": 1
@@ -18,9 +25,11 @@ Body: Raw -> JSON
 ```
 
 ## Answer the 8th question
+
 I applied strategy and composite design pattern to handle use case "we add fee by product type without change shipping fee code". <br>
 I create one FeeStrategy interface with one method: calculateFee.<br>
 Two detail class implement FeeStrategy interface:<br>
+
 - WeightFeeStrategy
 - DimensionFeeStrategy
 
